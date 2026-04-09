@@ -1,0 +1,19 @@
+/* frontend/static/css/optimicer.css */
+.pp-semaphore-grid { display: grid; gap: 16px; grid-template-columns: repeat(3,1fr); margin: 12px 0; }
+.pp-semaphore-box { border-radius: 12px; padding: 16px; color: #fff; text-align: center; }
+.pp-semaphore-box.green { background:#2fbf71; }
+.pp-semaphore-box.orange{ background:#f5a524; }
+.pp-semaphore-box.red   { background:#e94e4e; }
+.pp-semaphore-title{ font-weight:600; margin-bottom:8px; }
+.pp-semaphore-pct{ font-size:32px; font-weight:700; }
+.pp-semaphore-detail{ opacity:0.9; margin-top:6px; }
+.pp-summary { margin-top: 8px; font-size:18px; }
+.pp-prod strong { font-size:22px; }
+.pp-reco { margin-top: 16px; padding:16px; background:#eef7ff; border:1px solid #cfe7ff; border-radius:12px; }
+.pp-reco-actions{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+.pp-btn-primary{ background:#009fe3; color:#fff; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; }
+.pp-btn-secondary{ background:#485156; color:#fff; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; }
+.pp-screen { padding: 16px; }
+.pp-loading { display:flex; align-items:center; gap:10px; }
+.spinner{ width:18px; height:18px; border:3px solid #cfe7ff; border-top-color:#009fe3; border-radius:50%; animation:spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

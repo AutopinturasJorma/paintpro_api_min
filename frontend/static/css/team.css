@@ -1,0 +1,10 @@
+/* frontend/static/css/team.css */
+.pp-compare-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:16px; margin:12px 0; }
+.pp-card { border-radius:12px; padding:16px; color:#fff; }
+.pp-card.orange { background:#f5a524; }
+.pp-card.green  { background:#2fbf71; }
+.pp-kpi { font-size:32px; font-weight:800; }
+.pp-subkpi { opacity:0.95; }
+.pp-delta { margin:12px 0; font-size:18px; }
+.pp-cta { margin-top: 8px; }
+.pp-btn-primary{ background:#009fe3; color:#fff; border:none; padding:10px 16px; border-radius:8px; cursor:pointer; }

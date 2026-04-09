@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PaintPro • Dashboard</title>
+
+  <link rel="stylesheet" href="/static/css/paintpro.css" />
+  <link rel="stylesheet" href="static/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="pp-header">
+    <div class="pp-brand">PaintPro</div>
+    <div class="pp-subbrand">Dashboard (base limpia)</div>
+  </header>
+
+  <main id="app" class="pp-container"></main>
+
+  <!-- ================== BLOQUE DE SCRIPTS ================== -->
+
+  <!-- Formularios y vistas -->
+  <script src="/static/js/views/analytics_form.js"></script>
+  <script src="/static/js/views/analytics_results.js"></script>
+  <script src="/static/js/views/finance_form.js"></script>
+  <script src="/static/js/views/finance_results.js"></script>
+  <script src="/static/js/views/optimicer_setup.js"></script>
+  <script src="/static/js/views/optimicer_results.js"></script>
+
+  <!-- Dashboard modular (bloques nuevos) -->
+  <script src="/static/js/views/dashboard_blocks/finance_block.js"></script>
+  <script src="/static/js/views/dashboard_blocks/production_block.js"></script>
+  <script src="/static/js/views/dashboard_blocks/capacity_block.js"></script>
+  <script src="/static/js/views/dashboard_blocks/efficiency_block.js"></script>
+  <script src="/static/js/views/dashboard_blocks/profitability_block.js"></script>
+  <script src="/static/js/views/dashboard_blocks/pe_block.js"></script>
+  <script src="/static/js/views/dashboard_blocks/health_block.js"></script>
+  <script src="/static/js/views/dashboard_layout.js"></script>
+
+  <!-- Componentes comunes -->
+  <script src="/static/js/components/scenario_buttons.js"></script>
+
+  <!-- Librerías externas -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- App (último siempre) -->
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

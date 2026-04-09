@@ -1,0 +1,302 @@
+:root{
+  /* PALETA CLARA */
+  --bg:#ffffff; 
+  --card:#f7f9fc; 
+  --muted:#556171; 
+  --text:#0b1623;
+  --primary:#009FE3; 
+  --accent:#1ecb87; 
+  --warn:#f6a500; 
+  --danger:#e05252;
+  --border:#dbe3ef;
+  --navbg:#ffffffcc; /* topbar translúcida clara */
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0;
+  background:var(--bg); color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+a{color:var(--primary); text-decoration:none}
+a:hover{opacity:.9}
+
+.container{max-width:1100px; margin:80px auto 60px; padding:0 16px}
+
+/* TOPBAR */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--navbg); backdrop-filter:blur(6px);
+  padding:10px 16px; border-bottom:1px solid var(--border);
+}
+.nav a{margin:0 10px; color:#1d3b52; font-weight:600}
+.nav a:hover{color:var(--primary)}
+.logo{height:28px}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border); padding:16px; text-align:center; color:var(--muted); background:#fff}
+
+/* SECTION / CARDS */
+.section{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px; margin-bottom:16px;
+  box-shadow:0 1px 2px rgba(16,24,40,0.04);
+}
+.section.soft{background:#fff; border-style:dashed}
+
+h1,h2{margin:0 0 12px 0}
+h2{font-size:22px; line-height:1.2}
+.muted{color:var(--muted)}
+.note{color:#0d7a56}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:8px}
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px; padding:14px;
+  box-shadow:0 1px 2px rgba(16,24,40,0.04);
+}
+.center{text-align:center}
+.kpi{font-size:28px; font-weight:800}
+.label{font-size:12px; color:var(--muted)}
+
+/* BUTTONS */
+.btn{
+  display:inline-block; border:1px solid var(--border);
+  background:#fff; color:var(--text);
+  padding:10px 14px; border-radius:10px; cursor:pointer;
+  font-weight:600;
+  box-shadow:0 1px 2px rgba(16,24,40,0.04);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--primary); color:#ffffff; border-color:#008fcc}
+.btn.success{background:var(--accent); color:#073b2b; border-color:#12b877}
+.btn:disabled{opacity:.6; cursor:not-allowed}
+
+/* FORM */
+input,select{
+  width:100%; padding:10px; border-radius:10px;
+  border:1px solid var(--border); background:#fff; color:var(--text);
+  box-shadow:0 1px 2px rgba(16,24,40,0.03) inset;
+}
+input:focus,select:focus{outline:2px solid rgba(0,159,227,0.25); border-color:#b8def1}
+
+.hidden{display:none}
+
+/* LOADER */
+.loader{
+  width:52px; height:52px; border-radius:50%;
+  border:4px solid var(--border); border-top-color:var(--primary);
+  margin:18px auto; animation:spin 1s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ERROR */
+.errorbox{
+  white-space:pre-wrap; border:1px solid #ffd1d1;
+  padding:12px; border-radius:8px; background:#fff4f4; color:#7a1f1f
+}
+
+/* ACTIONS */
+.actions{margin-top:14px; display:flex; gap:8px; flex-wrap:wrap}
+
+/* AFINADO DE ESPACIADOS EN MOBILE */
+@media (max-width:480px){
+  .container{margin:72px auto 48px}
+  .kpi{font-size:24px}
+}
+
+/* ---------- Analytics: resultados apilados (dos KPIs grandes) ---------- */
+.pp-stack { display: grid; gap: 16px; }
+.pp-card-big {
+  background:#fff; border:1px solid var(--border); border-radius:14px; padding:20px;
+  box-shadow:0 1px 2px rgba(16,24,40,0.04);
+}
+.pp-card-big .pp-label { font:700 14px/1.2 system-ui, Arial; color:#485156; margin-bottom:6px; text-transform:uppercase; letter-spacing:.02em; }
+.pp-card-big .pp-kpi-xl { font:800 40px/1.1 system-ui, Arial; color:#0b1623; }
+.pp-card-big .pp-kpi-xl.success { color:#0a6136 !important; }
+.pp-card-big .pp-kpi-xl.warn { color:#9a6b00 !important; }
+.pp-card-big .pp-kpi-xl.danger { color:#e05252 !important; }
+.pp-card-big .pp-subrow { display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; color:#555; }
+.pp-card-big .pp-subrow > .label { font:600 13px/1.3 system-ui, Arial; color:#6b7682; }
+.pp-divider { height:1px; background:#eef2f5; margin:8px 0 0; }
+.pp-delta-note { background:#f6fbff; border:1px solid #d7eefc; color:#0b6aa7; border-radius:12px; padding:16px; text-align:center; font:600 16px/1.35 system-ui, Arial; }
+
+/* === Finance Results (FORZAR HORIZONTAL EN ESCRITORIO) === */
+.pp-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr)); /* <-- SIEMPRE 2 en escritorio */
+  gap: 16px;
+}
+.pp-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr)); /* <-- SIEMPRE 3 en escritorio */
+  gap: 16px;
+}
+/* Colapsa a 1 columna SOLO en pantallas realmente pequeñas */
+@media (max-width: 700px) {
+  .pp-grid-2, .pp-grid-3 { grid-template-columns: 1fr; }
+}
+
+
+
+/* Tarjeta base para tiles de Finance */
+.pp-tile{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 1px 2px rgba(16,24,40,0.04);
+}
+.pp-tile .pp-tile-title{
+  font:700 14px/1.2 system-ui, Arial;
+  color:#485156; text-transform:uppercase; letter-spacing:.02em;
+  margin-bottom:8px;
+}
+.pp-kpi{ font-size:28px; font-weight:800; color:#0b1623; }
+
+/* ---------- KPI diffs: flechas + colores ---------- */
+.pp-kpi-row { display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+.pp-kpi-diff{
+  font:700 12px/1 system-ui,Arial;
+  border-radius:999px;
+  padding:4px 8px;
+  color:#4b5a68;
+  background:#eef3f7;
+  border:1px solid #dfe6ee;
+}
+.pp-kpi-diff.up{
+  color:#0a6136;
+  background:#e9f8f0;
+  border-color:#c9eedc;
+}
+.pp-kpi-diff.down{
+  color:#e05252;
+  background:#fdecea;
+  border-color:#f8c5c0;
+}
+/* Añadimos el icono como pseudo-elemento */
+.pp-kpi-diff.up::before{ content:"▲ "; font-weight:900; }
+.pp-kpi-diff.down::before{ content:"▼ "; font-weight:900; }
+
+/* Nota informativa reutilizable */
+.pp-note { color:#0b6aa7; font-weight:600; }
+/* --- Filas horizontales robustas (flex) --- */
+.row-2,
+.row-3{
+  display:flex;
+  gap:16px;
+  align-items:stretch;
+  justify-content:space-between;
+  flex-wrap:nowrap;          /* <- siempre en fila en escritorio */
+}
+.row-2 > *, .row-3 > *{
+  flex:1 1 0;
+  min-width:0;               /* evita que crezcan y fuercen salto */
+}
+
+/* Solo colapsa a columna en móviles “de verdad” */
+@media (max-width: 640px){
+  .row-2, .row-3{
+    flex-direction:column;
+    flex-wrap:wrap;
+  }
+}
+
+/* ---- Charts: tamaño y contraste ---- */
+.pp-chart {
+  width: 100%;
+  height: 420px;              /* antes ~260-300 */
+  margin: 12px 0 6px;
+}
+
+.pp-chart-tall { height: 460px; }  /* para el PE si lo quieres aún más alto */
+
+.pp-kpi-tiles { display:grid; grid-template-columns: repeat(4, minmax(160px,1fr)); gap:10px; margin-top:8px; }
+@media (max-width: 900px){ .pp-kpi-tiles { grid-template-columns: repeat(2, 1fr); } }
+
+.pp-kpi-tiles .tile { background:#f6f9fb; border:1px solid #dfe8ef; border-radius:12px; padding:10px 12px; }
+.pp-kpi-tiles .lbl { font:600 12px/1.2 system-ui; color:#4a5b66; text-transform:uppercase; letter-spacing:.02em; margin-bottom:4px; }
+.pp-kpi-tiles .val { font:800 18px/1.15 system-ui; color:#0b2239; }
+.section { margin: 18px 0; }
+.cards { display: grid; gap: 12px; }
+.cards.kpi-pair { grid-template-columns: repeat(2, 1fr); }
+.cards.two { grid-template-columns: repeat(2, 1fr); }
+.cards.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 920px){
+  .cards.kpi-pair, .cards.two, .cards.three { grid-template-columns: 1fr; }
+}
+.card { border:1px solid #e6e9ec; border-radius:12px; padding:14px; background:#fff; }
+.card.center { text-align:center; }
+.card.big .kpi { font:800 32px/1.1 system-ui, Arial; }
+.card .label { font:700 12px/1.2 system-ui; color:#485156; text-transform:uppercase; letter-spacing:.02em; margin-top:4px; }
+.card .sub { font:600 12px/1.4 system-ui; color:#666; margin-top:2px; }
+.card.soft { background:#f9fafb; }
+.note { font:600 13px/1.5 system-ui; color:#555; margin:4px 0 10px; }
+.grid.section.soft { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.legend-row { display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; align-items:center; }
+.tag { display:inline-block; padding:4px 8px; border-radius:8px; font:700 11px/1 system-ui; }
+.tag.green { background:#e6f7ea; color:#0b7a2a; }
+.tag.gray { background:#eef2f5; color:#485156; }
+.actions { display:flex; justify-content:flex-end; margin-top:12px; }
+.btn.primary { background:#009FE3; color:#fff; border:0; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer; }
+.pp-kpi-diff.up { margin-left:6px; background:#e6f7ea; color:#0b7a2a; padding:2px 6px; border-radius:6px; font:700 11px/1 system-ui; }
+/* Tarjetas seleccionables (vehículo y mix) */
+.pp-veh-card,
+.pp-mix-card{
+  background:#eef6ff;
+  border:1px solid #d6e9ff;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .05s ease;
+  position:relative;
+}
+.pp-veh-card:hover,
+.pp-mix-card:hover{ box-shadow:0 2px 16px rgba(0,0,0,.06); }
+
+.pp-veh-card.is-active,
+.pp-mix-card.is-active{
+  border-color:#1a88ff;
+  box-shadow:0 0 0 2px rgba(26,136,255,.18), 0 8px 18px rgba(26,136,255,.12);
+  transform: translateY(-1px);
+}
+.pp-veh-card.is-active::after,
+.pp-mix-card.is-active::after{
+  content:"✓";
+  position:absolute;
+  top:8px; right:10px;
+  font-weight:700;
+  color:#1a88ff;
+}
+
+/* Botones de opción (jornada, etc.) */
+.pp-btn.is-active{
+  background:#1a88ff; color:#fff; border-color:#1a88ff;
+}
+.pp-btn.pp-ghost{ background:#eaf3ff; color:#1a88ff; }
+.pp-btn.pp-ghost.is-active{ background:#1a88ff; color:#fff; }
+.pp-veh-card.is-active, .pp-mix-card.is-active { border-color:#1a88ff; box-shadow:0 0 0 2px rgba(26,136,255,.18); }
+.pp-btn.is-active{ background:#1a88ff; color:#fff; }
+.pp-btn.pp-ghost{ background:#eaf3ff; color:#1a88ff; }
+.pp-btn.pp-ghost.is-active{ background:#1a88ff; color:#fff; }
+
+.card.is-active {
+  border: 2px solid #009fe3 !important;
+  background: #e6f4ff !important;
+}
+
+/* Estado activo de las tarjetas de selección */
+.pp-veh-card.is-active,
+.pp-mix-card.is-active {
+  border: 2px solid #009fe3;
+  background: #d6ecff !important;
+}
+
+.pp-btn.is-active {
+  background: #009fe3;
+  color: #fff;
+  border-color: #009fe3;
+}
